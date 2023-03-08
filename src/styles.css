@@ -15,10 +15,6 @@ html {
   min-height: 100vh;
 }
 
-body {
-  padding-bottom: 83px;
-}
-
 .container {
   padding-right: 1rem;
   padding-left: 1rem;
@@ -35,6 +31,5 @@ button:hover {
   border: 2px solid #050C42;
 }
 
-
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
