@@ -32,7 +32,7 @@ export class ListaLivrosComponent implements OnInit {
     })
   );
 
-  constructor(private service: LivroService) { }
+  constructor(public service: LivroService) { }
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');

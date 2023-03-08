@@ -12,6 +12,8 @@ import { ListaLivrosComponent } from './views/lista-livros/lista-livros.componen
 import { ModalLivroComponent } from './views/modal-livro/modal-livro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from "@angular/material/progress-bar";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
