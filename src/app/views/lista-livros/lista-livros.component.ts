@@ -24,22 +24,11 @@ export class ListaLivrosComponent implements OnInit {
     filter((valorDigitado) => valorDigitado.length >= 3),
     distinctUntilChanged(),
     switchMap((valorDigitado) => this.service.buscar(valorDigitado)),
+    map((resultado) => this.livrosResultado = resultado),
     map((resultado) => resultado.items ?? []),
     map(items => this.livrosResultadoParaLivros(items)),
     catchError((error) => {
       return throwError(() => new Error(this.mensagemErro = 'Ops, ocorreu um erro. Recarregue a aplicação!'))
-    })
-  );
-
-  totalDeLivros$ = this.campoBusca.valueChanges.pipe(
-    debounceTime(PAUSA),
-    filter((valorDigitado) => valorDigitado.length >= 3),
-    distinctUntilChanged(),
-    switchMap((valorDigitado) => this.service.buscar(valorDigitado)),
-    map(resultado => this.livrosResultado = resultado),
-    catchError((error) => {
-      console.log(error);
-      return of();
     })
   );
 
